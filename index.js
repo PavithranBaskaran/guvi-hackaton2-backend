@@ -221,7 +221,7 @@ app.get("/admin-dashboard/:id", authenticateAdmin, async function (req, res) {
     console.log(error);
   }
 });
-app.put("/admin-dashboard/:id", authenticateAdmin, async function (req, res) {
+app.put("/admin-dashboard/:id",  async function (req, res) {
   try {
     const connection = await mongoClient.connect(URL);
     const db = connection.db("bookMyShow");
@@ -236,7 +236,7 @@ app.put("/admin-dashboard/:id", authenticateAdmin, async function (req, res) {
 });
 app.delete(
   "/admin-dashboard/:id",
-  authenticateAdmin,
+  
   async function (req, res) {
     try {
       const connection = await mongoClient.connect(URL);
